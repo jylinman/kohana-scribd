@@ -53,7 +53,7 @@ class Scribd {
 	/**
 	 * Upload a document from a Url
 	 *
-	 * @param string $url : absolute URL of file 
+	 * @param string $url : absolute URL of file
 	 * @param string $doc_type : PDF, DOC, TXT, PPT, etc.
 	 * @param string $access : public or private. Default is Public.
 	 * @return array containing doc_id, access_key, and secret_password if nessesary.
@@ -227,7 +227,7 @@ class Scribd {
 		curl_setopt($ch, CURLOPT_URL, $url . URL::query($params));
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		$xml = curl_exec( $ch );
-		$result = simplexml_load_string($xml); 
+		$result = simplexml_load_string($xml);
 		curl_close($ch);
 
 		if ($result['stat'] == 'fail')
@@ -281,7 +281,7 @@ class Scribd {
 
 
 
-		$result = simplexml_load_string($xml); 
+		$result = simplexml_load_string($xml);
 		curl_close($ch);
 
 		if ($result['stat'] == 'fail')
@@ -322,7 +322,7 @@ class Scribd {
 		ksort($params);
 
 		$str = $this->_config['api_secret'];
-		foreach ($params as $k => $v) 
+		foreach ($params as $k => $v)
 		{
 			$str .= $k . $v;
 		}
